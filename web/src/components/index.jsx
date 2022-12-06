@@ -10,7 +10,10 @@ const Weather = () => {
   const [weatherData, setWeatherData] = useState(null);
   const [cityName, setCityName] = useState('');
 
-  const submitHandler = () => {
+  const submitHandler = (e) => {
+
+    e.preventDefault();
+
     axios
       .get("https://teal-worrisome-macaw.cyclic.app/weather")
       .then((response) => {
